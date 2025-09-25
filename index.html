@@ -6,24 +6,23 @@
 <title>Forum DARKWEB - Jeu</title>
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
-  body{background:#0b0f12;color:#e6eef6;font-family:'VT323', monospace;padding:20px;}
-  .wrap{max-width:900px;margin:0 auto;}
-  .skull img{max-width:200px; display:block; margin:0 auto 10px;}
-  .title{font-family:'VT323', monospace;font-size:48px;text-align:center;color:#e85b5b;margin-bottom:30px;font-weight:bold;letter-spacing:4px;}
+  body{background:#0b0f12;color:#e6eef6;font-family:'VT323', monospace;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
+  .skull img{max-width:300px; display:block; margin:0 auto 10px;}
+  .title{font-family:'VT323', monospace;font-size:64px;text-align:center;color:#e85b5b;margin-bottom:30px;font-weight:bold;letter-spacing:6px;}
+  .codeBox{display:flex;justify-content:center;gap:15px;margin:30px 0;}
+  select{padding:10px;border-radius:6px;background:rgba(255,255,255,0.02);color:#e6eef6;font-weight:700;font-size:22px;}
+  button.validate{margin-left:20px;padding:10px 20px;font-weight:bold;border-radius:6px;background:#e85b5b;color:#fff;border:none;cursor:pointer;}
+  .posts{max-width:900px;width:100%;}
   .post{background:#0f1720;padding:15px;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.05);}
   .author{font-weight:bold;color:#e85b5b;}
   .date{font-size:12px;color:#9aa5b1;margin-left:8px;}
   .postContent{margin-top:6px;white-space:pre-wrap;}
-  .codeBox{display:flex;justify-content:center;gap:15px;margin:30px 0;}
-  select{padding:10px;border-radius:6px;background:rgba(255,255,255,0.02);color:#e6eef6;font-weight:700;font-size:22px;}
-  button.validate{margin-left:20px;padding:10px 20px;font-weight:bold;border-radius:6px;background:#e85b5b;color:#fff;border:none;cursor:pointer;}
   .msg{margin-top:12px;text-align:center;padding:10px;border-radius:6px;display:none;}
   .msg.ok{background:rgba(71,216,167,0.08);color:#b8ffe6;border:1px solid rgba(71,216,167,0.12);}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="skull"><img src="https://img.freepik.com/vecteurs-libre/traverser-logo-vectoriel-du-crane-os_43623-1281.jpg?semt=ais_hybrid&w=740&q=80" alt="Tête de mort"></div>
+  <div class="skull"><img src="https://www.pngegg.com/fr/png-eetmw" alt="Tête de mort"></div>
   <div class="title">DARKWEB</div>
 
   <div class="codeBox">
@@ -35,48 +34,49 @@
     <button class="validate" onclick="checkCode()">Valider</button>
   </div>
 
-  <!-- Messages cachés -->
-  <div class="post msg" id="post1">
-    <div class="author">blackrose12 <span class="date">31/10/2025 - 00:00</span></div>
-    <div class="postContent">Bonjour, c'est la première fois que je suis là. J'ai besoin d'un conseil pour un enterrement de vie de jeune fille le 31 octobre. Partie codée: L3@c0ns3ilPr1m@l !</div>
+  <div class="posts">
+    <!-- Messages cachés -->
+    <div class="post msg" id="post1">
+      <div class="author">blackrose12 <span class="date">31/10/2025 - 00:00</span></div>
+      <div class="postContent">Bonjour, c'est la première fois que je suis là. J'ai besoin d'un conseil pour un enterrement de vie de jeune fille le 31 octobre. Partie codée: L3@c0ns3ilPr1m@l !</div>
+    </div>
+    <div class="post msg" id="post2">
+      <div class="author">Shadow53 <span class="date">31/10/2025 - 00:05</span></div>
+      <div class="postContent">Pr1m@ry @rm3 3t 4l1b1 d1scret</div>
+    </div>
+    <div class="post msg" id="post3">
+      <div class="author">Anon666 <span class="date">31/10/2025 - 00:10</span></div>
+      <div class="postContent">Oui, v1se b13n l'3nceph@le et port3 d3s gants</div>
+    </div>
+    <div class="post msg" id="post4">
+      <div class="author">DarkWolf <span class="date">31/10/2025 - 00:15</span></div>
+      <div class="postContent">N'oubliez pas de rester discret et de ne laisser aucune trace.</div>
+    </div>
+    <div class="post msg" id="post5">
+      <div class="author">EchoX <span class="date">31/10/2025 - 00:20</span></div>
+      <div class="postContent">Tout est prêt, soyez prudente et amusez-vous.</div>
+    </div>
+    <div class="post msg" id="post6">
+      <div class="author">NightOwl <span class="date">31/10/2025 - 00:25</span></div>
+      <div class="postContent">Préparez un plan de secours si quelque chose tourne mal.</div>
+    </div>
+    <div class="post msg" id="post7">
+      <div class="author">Shadow53 <span class="date">31/10/2025 - 00:30</span></div>
+      <div class="postContent">Et n'oubliez pas de vérifier vos alliés.</div>
+    </div>
+    <div class="post msg" id="post8">
+      <div class="author">Anon666 <span class="date">31/10/2025 - 00:35</span></div>
+      <div class="postContent">C0ntr0l3z l3s cam3r@s avant l'@ct1on</div>
+    </div>
+    <div class="post msg" id="post9">
+      <div class="author">DarkWolf <span class="date">31/10/2025 - 00:40</span></div>
+      <div class="postContent">Tout est planifié, assurez-vous que personne ne s'approche.</div>
+    </div>
+    <div class="post msg" id="post10">
+      <div class="author">blackrose12 <span class="date">31/10/2025 - 19:30</span></div>
+      <div class="postContent">Merci pour vos conseils. L'enterrement de vie de jeune fille a été un succès !</div>
+    </div>
   </div>
-  <div class="post msg" id="post2">
-    <div class="author">Shadow53 <span class="date">31/10/2025 - 00:05</span></div>
-    <div class="postContent">Pr1m@ry @rm3 3t 4l1b1 d1scret</div>
-  </div>
-  <div class="post msg" id="post3">
-    <div class="author">Anon666 <span class="date">31/10/2025 - 00:10</span></div>
-    <div class="postContent">Oui, v1se b13n l'3nceph@le et port3 d3s gants</div>
-  </div>
-  <div class="post msg" id="post4">
-    <div class="author">DarkWolf <span class="date">31/10/2025 - 00:15</span></div>
-    <div class="postContent">N'oubliez pas de rester discret et de ne laisser aucune trace.</div>
-  </div>
-  <div class="post msg" id="post5">
-    <div class="author">EchoX <span class="date">31/10/2025 - 00:20</span></div>
-    <div class="postContent">Tout est prêt, soyez prudente et amusez-vous.</div>
-  </div>
-  <div class="post msg" id="post6">
-    <div class="author">NightOwl <span class="date">31/10/2025 - 00:25</span></div>
-    <div class="postContent">Préparez un plan de secours si quelque chose tourne mal.</div>
-  </div>
-  <div class="post msg" id="post7">
-    <div class="author">Shadow53 <span class="date">31/10/2025 - 00:30</span></div>
-    <div class="postContent">Et n'oubliez pas de vérifier vos alliés.</div>
-  </div>
-  <div class="post msg" id="post8">
-    <div class="author">Anon666 <span class="date">31/10/2025 - 00:35</span></div>
-    <div class="postContent">C0ntr0l3z l3s cam3r@s avant l'@ct1on</div>
-  </div>
-  <div class="post msg" id="post9">
-    <div class="author">DarkWolf <span class="date">31/10/2025 - 00:40</span></div>
-    <div class="postContent">Tout est planifié, assurez-vous que personne ne s'approche.</div>
-  </div>
-  <div class="post msg" id="post10">
-    <div class="author">blackrose12 <span class="date">31/10/2025 - 19:30</span></div>
-    <div class="postContent">Merci pour vos conseils. L'enterrement de vie de jeune fille a été un succès !</div>
-  </div>
-</div>
 <script>
 const SECRET = 'HAPPY';
 const posts = [];
