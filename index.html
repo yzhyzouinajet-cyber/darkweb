@@ -6,23 +6,97 @@
 <title>Forum DARKWEB - Jeu</title>
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
-  body{background:#0b0f12;color:#e6eef6;font-family:'VT323', monospace;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
-  .skull img{max-width:300px; display:block; margin:0 auto 10px;}
-  .title{font-family:'VT323', monospace;font-size:64px;text-align:center;color:#e85b5b;margin-bottom:30px;font-weight:bold;letter-spacing:6px;}
-  .codeBox{display:flex;justify-content:center;gap:15px;margin:30px 0;}
-  select{padding:10px;border-radius:6px;background:rgba(255,255,255,0.02);color:#e6eef6;font-weight:700;font-size:22px;}
-  button.validate{margin-left:20px;padding:10px 20px;font-weight:bold;border-radius:6px;background:#e85b5b;color:#fff;border:none;cursor:pointer;}
-  .posts{max-width:900px;width:100%;}
-  .post{background:#0f1720;padding:15px;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.05);}
-  .author{font-weight:bold;color:#e85b5b;}
-  .date{font-size:12px;color:#9aa5b1;margin-left:8px;}
-  .postContent{margin-top:6px;white-space:pre-wrap;}
-  .msg{margin-top:12px;text-align:center;padding:10px;border-radius:6px;display:none;}
-  .msg.ok{background:rgba(71,216,167,0.08);color:#b8ffe6;border:1px solid rgba(71,216,167,0.12);}
+  body {
+    background: #0b0f12;
+    color: #e6eef6;
+    font-family: 'VT323', monospace;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .skull img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+  .title {
+    font-family: 'VT323', monospace;
+    font-size: 64px;
+    text-align: center;
+    color: #e85b5b;
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 6px;
+  }
+  .codeBox {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+  }
+  select {
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    color: #e6eef6;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  button.validate {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    background: #e85b5b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .posts {
+    max-width: 900px;
+    width: 100%;
+  }
+  .post {
+    background: #0f1720;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .author {
+    font-weight: bold;
+    color: #e85b5b;
+  }
+  .date {
+    font-size: 12px;
+    color: #9aa5b1;
+    margin-left: 8px;
+  }
+  .postContent {
+    margin-top: 6px;
+    white-space: pre-wrap;
+  }
+  .msg {
+    margin-top: 12px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    display: none;
+  }
+  .msg.ok {
+    background: rgba(71,216,167,0.08);
+    color: #b8ffe6;
+    border: 1px solid rgba(71,216,167,0.12);
+  }
 </style>
 </head>
 <body>
-  <div class="skull"><img src="https://img.favpng.com/21/13/14/drawing-headphones-skull-desktop-wallpaper-png-favpng-783V2yVXNafhHTSsSiHtFWp4Q.jpg" alt="Tête de mort "></div>
+  <div class="skull">
+    <img src="https://img.favpng.com/21/13/14/drawing-headphones-skull-desktop-wallpaper-png-favpng-783V2yVXNafhHTSsSiHtFWp4Q.png" alt="Tête de mort avec écouteurs">
+  </div>
   <div class="title">DARKWEB</div>
 
   <div class="codeBox">
