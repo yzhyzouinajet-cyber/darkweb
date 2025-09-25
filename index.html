@@ -1,112 +1,47 @@
-<!-- dark_forum.html - usage local / jeu uniquement -->
 <!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>— forum privé —</title>
+<title>Forum Dark Web - Jeu</title>
 <style>
-  :root{--bg:#0b0f12;--card:#0f1720;--accent:#47d8a7;--muted:#9aa5b1;}
-  body{background:linear-gradient(180deg,#050608 0%,#0b0f12 100%);color:#e6eef6;font-family: "Consolas", "Courier New", monospace; padding:28px;}
+  body{background:#0b0f12;color:#e6eef6;font-family: monospace;padding:20px;}
   .wrap{max-width:900px;margin:0 auto;}
-  header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-  .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#123,#024);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
-  h1{font-size:18px;margin:0}
-  .card{background:var(--card);border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:8px;margin-bottom:14px}
-  label{color:var(--muted);font-size:13px}
-  input[type="password"]{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:none;background:#081018;color:#dce7ef}
-  .hidden{display:none}
-  .post{background:rgba(255,255,255,0.02);padding:12px;border-radius:6px;margin-top:10px;white-space:pre-wrap}
-  .meta{font-size:12px;color:var(--muted);margin-bottom:8px}
-  button{background:var(--accent);border:none;padding:8px 12px;border-radius:6px;color:#022;cursor:pointer}
-  .decode{margin-top:10px}
-  .hint{font-size:13px;color:var(--muted);margin-top:6px}
+  .thread-title{font-size:20px;margin-bottom:20px;color:#47d8a7;}
+  .post{background:#0f1720;padding:15px;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.05);}
+  .author{font-weight:bold;color:#e85b5b;}
+  .date{font-size:12px;color:#9aa5b1;margin-left:8px;}
+  .postContent{margin-top:6px;white-space:pre-wrap;}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="logo">X</div>
-    <div>
-      <h1>forum privé — nœud obscur</h1>
-      <div style="color:var(--muted);font-size:13px">section cachée — accès réservé (jeu)</div>
-    </div>
-  </header>
+  <h2 class="thread-title">Sujet : Rencontre discrète</h2>
 
-  <div class="card" id="authCard">
-    <label>Code d'accès</label>
-    <input id="pw" type="password" placeholder="Entrez le mot-clé (indice dans le dossier)" />
-    <div style="margin-top:8px"><button onclick="tryAuth()">Entrer</button></div>
-    <div class="hint">Indice : la clé est liée à l’étiquette de la montre (jeu).</div>
+  <div class="post">
+    <div class="author">Shadow53 <span class="date">31/10 - 14h22</span></div>
+    <div class="postContent">Quelqu'un a des infos sur le lieu ?</div>
   </div>
 
-  <div id="forum" class="hidden">
-    <div class="card">
-      <div class="meta">Fil : murmures / 2025-octobre</div>
+  <div class="post">
+    <div class="author">Anon666 <span class="date">31/10 - 14h35</span></div>
+    <div class="postContent">Je crois que le parc est sûr pour le moment, personne n’a été vu.</div>
+  </div>
 
-      <div class="post">
-        <div class="meta">[Pseudo : nox_shadow] — 31/10 — message encodé</div>
-        <div id="msg1" class="postContent">Uif!qspwjefs!jt!nbjm!gpy!</div>
-        <div class="decode">
-          <label>Décoder (décalage César) : </label>
-          <input id="shift" type="number" value="1" style="width:70px;margin-left:6px"/>
-          <button onclick="caesarDecode()">Décoder</button>
-        </div>
-        <div class="hint">Remarque : essayez un décalage de 1 → 6</div>
-      </div>
+  <div class="post">
+    <div class="author">DarkWolf <span class="date">31/10 - 14h50</span></div>
+    <div class="postContent">Faites attention aux surveillances, restez discret.</div>
+  </div>
 
-      <div class="post">
-        <div class="meta">[Pseudo : crypticClaire] — 30/10 — anagramme</div>
-        <div id="msg2" class="postContent">"révèle le mot : RNEIG" </div>
-        <div class="hint">Indice : une simple anagramme (le mot formé est lié à 'exposer').</div>
-      </div>
+  <div class="post">
+    <div class="author">Claire_07 <span class="date">31/10 - 15h10</span></div>
+    <div class="postContent">L3 m3ss@g3 s3c0nd@1r3: Vhq#r@nt ksl</div>
+  </div>
 
-      <div class="post">
-        <div class="meta">[Pseudo : echo] — 29/10 — transposition</div>
-        <div id="msg3" class="postContent">"srelepa ni  la  tsea" </div>
-        <div class="hint">Indice : permute les blocs pour reconstituer la phrase.</div>
-      </div>
-
-      <div style="margin-top:12px;color:var(--muted);font-size:12px">
-        <strong>Note:</strong> ce forum est une **fiction** destinée au jeu. Les messages sont volontairement brouillés et ne décrivent aucune action réelle.
-      </div>
-    </div>
+  <div class="post">
+    <div class="author">EchoX <span class="date">31/10 - 15h20</span></div>
+    <div class="postContent">Bien reçu, on se retrouve plus tard sur le fil principal.</div>
   </div>
 </div>
-
-<script>
-  // mot de passe fictif pour le jeu :
-  const SECRET = "ML-2025-LYN-CL1-0897"; // change selon ton scénario
-
-  function tryAuth(){
-    const v = document.getElementById('pw').value.trim();
-    if(!v) return alert("Entrez le code d'accès.");
-    if(v === SECRET){ document.getElementById('authCard').classList.add('hidden'); document.getElementById('forum').classList.remove('hidden'); }
-    else alert("Accès refusé.");
-  }
-
-  // fonction simple Caesar (décode en reculant 'shift')
-  function caesarDecode(){
-    const s = document.getElementById('msg1').textContent;
-    let shift = parseInt(document.getElementById('shift').value || "1");
-    let out="";
-    for(let i=0;i<s.length;i++){
-      let c=s.charCodeAt(i);
-      if(c>=65 && c<=90){ out += String.fromCharCode((c-65-shift+26)%26 +65); }
-      else if(c>=97 && c<=122){ out += String.fromCharCode((c-97-shift+26)%26 +97); }
-      else out += s[i];
-    }
-    document.getElementById('msg1').textContent = out;
-  }
-
-  // (petites aides pour le jeu): fonction de résolution d'anagramme simple
-  document.getElementById && (function(){
-    const el2 = document.getElementById('msg2');
-    el2.addEventListener('dblclick', function(){ 
-      // révèle solution après double-clic (optionnel)
-      this.textContent = '"révèle le mot : REING"'; // montre l'anagramme reconstituée (ex: REING -> REING -> "REING" -> tu peux remplacer par mot jeu)
-    });
-  })();
-</script>
 </body>
 </html>
