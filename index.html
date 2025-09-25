@@ -16,20 +16,23 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
   }
   .skull img {
     max-width: 500px;
     display: block;
-    margin: 0 auto 10px;
+    margin: 100px auto 10px auto;
   }
   .title {
     font-family: 'VT323', monospace;
-    font-size: 64px;
+    font-size: 96px;
     text-align: center;
     color: #39ff14; /* titre vert fluo */
-    margin-bottom: 30px;
     font-weight: bold;
-    letter-spacing: 6px;
+    letter-spacing: 8px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
   }
   .codeBox {
     display: flex;
@@ -49,16 +52,6 @@
   select option {
     background: #000000;
     color: #39ff14;
-  }
-  button.validate {
-    margin-left: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 6px;
-    background: #39ff14; /* bouton vert fluo */
-    color: #000000;       /* texte noir pour contraste */
-    border: none;
-    cursor: pointer;
   }
   .posts {
     max-width: 900px;
@@ -91,18 +84,13 @@
     border-radius: 6px;
     display: none;
   }
-  .msg.ok {
-    background: rgba(71,216,167,0.08);
-    color: #b8ffe6;
-    border: 1px solid rgba(71,216,167,0.12);
-  }
 </style>
 </head>
 <body>
+  <div class="title">DARKWEB</div>
   <div class="skull">
     <img src="https://i.pinimg.com/736x/ae/28/15/ae28159d5b0fa4d2a192ffab8960f93a.jpg" alt="Tête de mort avec écouteurs">
   </div>
-  <div class="title">DARKWEB</div>
 
   <div class="codeBox">
     <select id="slot1"></select>
@@ -110,7 +98,6 @@
     <select id="slot3"></select>
     <select id="slot4"></select>
     <select id="slot5"></select>
-    <button class="validate" onclick="checkCode()">Valider</button>
   </div>
 
   <div class="posts">
@@ -171,14 +158,14 @@ slots.forEach(id=>{
     opt.value=l; opt.textContent=l;
     sel.appendChild(opt);
   });
+  // ajouter événement change pour ouvrir automatiquement
+  sel.addEventListener('change', checkCode);
 });
 
 function checkCode(){
   let input = slots.map(id=>document.getElementById(id).value).join('');
   if(input===SECRET){
     posts.forEach(id=>document.getElementById(id).style.display='block');
-  } else {
-    alert('Code incorrect');
   }
 }
 </script>
