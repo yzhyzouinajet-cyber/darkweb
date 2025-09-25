@@ -7,41 +7,100 @@
 <style>
   body{background:#0b0f12;color:#e6eef6;font-family: monospace;padding:20px;}
   .wrap{max-width:900px;margin:0 auto;}
+  .skull{font-size:64px;text-align:center;margin-bottom:20px;}
   .thread-title{font-size:20px;margin-bottom:20px;color:#47d8a7;}
   .post{background:#0f1720;padding:15px;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.05);}
   .author{font-weight:bold;color:#e85b5b;}
   .date{font-size:12px;color:#9aa5b1;margin-left:8px;}
   .postContent{margin-top:6px;white-space:pre-wrap;}
+  .codeBox{display:flex;justify-content:center;gap:10px;margin:20px 0;}
+  .slot{width:48px;height:58px;border-radius:6px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;letter-spacing:3px;border:2px solid rgba(255,255,255,0.02);}
+  .keyboard{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;justify-items:center;}
+  .letter{padding:10px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);color:#e6eef6;cursor:pointer;font-weight:600;}
+  .letter:active{transform:translateY(1px);}
+  .msg{margin-top:12px;text-align:center;padding:10px;border-radius:6px;display:none;}
+  .msg.ok{background:rgba(71,216,167,0.08);color:#b8ffe6;border:1px solid rgba(71,216,167,0.12);}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="skull">💀</div>
   <h2 class="thread-title">Sujet : Rencontre discrète</h2>
 
-  <div class="post">
-    <div class="author">Shadow53 <span class="date">31/10 - 14h22</span></div>
+  <div class="codeBox" id="codeBox"></div>
+  <div class="keyboard" id="keyboard"></div>
+
+  <div class="post msg" id="post1">
+    <div class="author">Shadow53 <span class="date">29/10/2025 - 00:00</span></div>
     <div class="postContent">Quelqu'un a des infos sur le lieu ?</div>
   </div>
 
-  <div class="post">
-    <div class="author">Anon666 <span class="date">31/10 - 14h35</span></div>
+  <div class="post msg" id="post2">
+    <div class="author">Anon666 <span class="date">29/10/2025 - 00:00</span></div>
     <div class="postContent">Je crois que le parc est sûr pour le moment, personne n’a été vu.</div>
   </div>
 
-  <div class="post">
-    <div class="author">DarkWolf <span class="date">31/10 - 14h50</span></div>
+  <div class="post msg" id="post3">
+    <div class="author">DarkWolf <span class="date">29/10/2025 - 00:00</span></div>
     <div class="postContent">Faites attention aux surveillances, restez discret.</div>
   </div>
 
-  <div class="post">
-    <div class="author">Claire_07 <span class="date">31/10 - 15h10</span></div>
+  <div class="post msg" id="post4">
+    <div class="author">blackrose12 <span class="date">29/10/2025 - 00:00</span></div>
     <div class="postContent">L3 m3ss@g3 s3c0nd@1r3: Vhq#r@nt ksl</div>
   </div>
 
-  <div class="post">
-    <div class="author">EchoX <span class="date">31/10 - 15h20</span></div>
+  <div class="post msg" id="post5">
+    <div class="author">EchoX <span class="date">29/10/2025 - 00:00</span></div>
     <div class="postContent">Bien reçu, on se retrouve plus tard sur le fil principal.</div>
   </div>
 </div>
+<script>
+const SECRET = 'HAPPY';
+let current = [];
+const codeBox = document.getElementById('codeBox');
+const keyboard = document.getElementById('keyboard');
+const posts = ['post1','post2','post3','post4','post5'];
+
+// Créer les slots
+for(let i=0;i<SECRET.length;i++){
+  let slot = document.createElement('div');
+  slot.className='slot';
+  codeBox.appendChild(slot);
+}
+
+// Créer clavier
+const letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+letters.forEach(l=>{
+  let btn=document.createElement('button');
+  btn.className='letter';
+  btn.textContent=l;
+  btn.onclick=()=>pickLetter(l);
+  keyboard.appendChild(btn);
+});
+
+function pickLetter(l){
+  if(current.length<SECRET.length){
+    current.push(l);
+    updateSlots();
+    if(current.length===SECRET.length) checkCode();
+  }
+}
+
+function updateSlots(){
+  const slots=document.querySelectorAll('.slot');
+  slots.forEach((s,i)=>s.textContent=current[i]||'');
+}
+
+function checkCode(){
+  if(current.join('')===SECRET){
+    posts.forEach(id=>document.getElementById(id).style.display='block');
+  } else {
+    alert('Code incorrect');
+    current=[];
+    updateSlots();
+  }
+}
+</script>
 </body>
 </html>
