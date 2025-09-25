@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
   body {
-    background: linear-gradient(to bottom, #000000 100%, #39ff14 0%);
+    background: linear-gradient(to bottom, #000000 0%, #000000 66%, #39ff14 100%);
     color: #e6eef6;
     font-family: 'VT323', monospace;
     margin: 0;
@@ -26,7 +26,7 @@
     font-family: 'VT323', monospace;
     font-size: 64px;
     text-align: center;
-    color: #e85b5b;
+    color: #39ff14; /* titre vert fluo */
     margin-bottom: 30px;
     font-weight: bold;
     letter-spacing: 6px;
@@ -38,21 +38,25 @@
     margin: 30px 0;
   }
   select {
-    padding: 10px;
-    border-radius: 6px;
+    padding: 5px;
+    border-radius: 4px;
     background: #000000;
     color: #39ff14;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
     border: 1px solid #39ff14;
+  }
+  select option {
+    background: #000000;
+    color: #39ff14;
   }
   button.validate {
     margin-left: 20px;
     padding: 10px 20px;
     font-weight: bold;
     border-radius: 6px;
-    background: #e85b5b;
-    color: #fff;
+    background: #39ff14; /* bouton vert fluo */
+    color: #000000;       /* texte noir pour contraste */
     border: none;
     cursor: pointer;
   }
