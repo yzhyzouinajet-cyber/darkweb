@@ -169,10 +169,16 @@ slots.forEach(id=>{
 function checkCode(){
   let input = slots.map(id=>document.getElementById(id).value).join('');
   if(input===SECRET){
-    alert("🎉 Bravo, vous pouvez ouvrir l’enveloppe 3 !");
     posts.forEach(id=>document.getElementById(id).style.display='block');
+    document.getElementById('enveloppe3Message').style.display='block'; // afficher le message
   }
-}
+<div id="enveloppe3Message" style="display:none; 
+     position: fixed; bottom: 20px; right: 20px; 
+     background: #39ff14; color: #000; 
+     padding: 15px 20px; border-radius: 10px; 
+     font-weight: bold; box-shadow: 0 0 10px #39ff14;">
+  🎉 Bravo, vous pouvez ouvrir l'enveloppe 3 !
+</div>
 </script>
 </body>
 </html>
