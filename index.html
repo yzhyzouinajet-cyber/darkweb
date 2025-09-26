@@ -163,13 +163,13 @@ slots.forEach(id=>{
     opt.value=l; opt.textContent=l;
     sel.appendChild(opt);
   });
-  // ajouter événement change pour ouvrir automatiquement
-  sel.addEventListener('change', checkCode);
+  sel.addEventListener("change", checkCode); // vérifie à chaque changement
 });
 
 function checkCode(){
   let input = slots.map(id=>document.getElementById(id).value).join('');
   if(input===SECRET){
+    alert("🎉 Bravo, vous pouvez ouvrir l’enveloppe 3 !");
     posts.forEach(id=>document.getElementById(id).style.display='block');
   }
 }
