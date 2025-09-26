@@ -7,57 +7,47 @@
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
   body {
-    background:linear-gradient(to bottom,
-    #000000 0%,       /* noir en haut */
-    #000000 66%,      /* noir jusqu'au 2/3 */
-    #003300 70%,      /* vert foncé commence juste après 2/3 */
-    #006600 85%,      /* vert moyen */
-    #39ff14 100%      /* vert fluo en bas */  
-);
+    background: linear-gradient(to bottom, #000000 0%, #000000 65%, #39ff14 100%);
     color: #e6eef6;
     font-family: 'VT323', monospace;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    position: relative;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
   }
   .skull img {
     max-width: 500px;
     display: block;
-    margin: 80px auto 20px auto; /* réduit la marge haute de 20px (~2cm) */
+    margin: 0 auto 10px;
+    position: relative;
+    top: -10px;
   }
   .title {
     font-family: 'VT323', monospace;
-    font-size: 96px;
+    font-size: 80px;
     text-align: center;
-    color: #39ff14; /* titre vert fluo */
+    color: #39ff14;
+    margin-bottom: 20px;
     font-weight: bold;
-    letter-spacing: 8px;
-    position: absolute;
-    top: 10px;
-    width: 100%;
+    letter-spacing: 6px;
   }
   .codeBox {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
+    gap: 8px;
+    margin: 20px 0;
   }
   select {
-    padding: 3px;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 6px;
     background: #000000;
     color: #39ff14;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
     border: 1px solid #39ff14;
-  }
-  select option {
-    background: #000000;
-    color: #39ff14;
   }
   .posts {
     max-width: 900px;
@@ -90,13 +80,30 @@
     border-radius: 6px;
     display: none;
   }
+  #enveloppe3Message {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background: #39ff14; 
+    color: #000; 
+    padding: 15px 20px; 
+    border-radius: 10px; 
+    font-weight: bold; 
+    box-shadow: 0 0 10px #39ff14;
+    animation: fadeIn 1s ease;
+  }
+  @keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+  }
 </style>
 </head>
 <body>
-  <div class="title">DARKWEB</div>
   <div class="skull">
     <img src="https://i.pinimg.com/736x/ae/28/15/ae28159d5b0fa4d2a192ffab8960f93a.jpg" alt="Tête de mort avec écouteurs">
   </div>
+  <div class="title">DARKWEB</div>
 
   <div class="codeBox">
     <select id="slot1"></select>
@@ -107,47 +114,53 @@
   </div>
 
   <div class="posts">
-    <!-- Messages cachés -->
     <div class="post msg" id="post1">
-      <div class="author">Blackswan <span class="date">29/10/2025 - 00:00</span></div>
-      <div class="postContent">Bonjour, c'est ma première fois . J'ai besoin d'un conseil pour un enterrement de vie de jeune fille le 31 octobre.  !</div>
+      <div class="author">blackrose12 <span class="date">31/10/2025 - 00:00</span></div>
+      <div class="postContent">Bonjour, c'est la première fois que je suis là. J'ai besoin d'un conseil pour un enterrement de vie de jeune fille le 31 octobre. Partie codée: L3@c0ns3ilPr1m@l !</div>
     </div>
     <div class="post msg" id="post2">
-      <div class="author">Shadow53 <span class="date">29/10/2025 - 00:05</span></div>
+      <div class="author">Shadow53 <span class="date">31/10/2025 - 00:05</span></div>
       <div class="postContent">Pr1m@ry @rm3 3t 4l1b1 d1scret</div>
     </div>
     <div class="post msg" id="post3">
-      <div class="author">Anon666 <span class="date">29/10/2025 - 00:10</span></div>
+      <div class="author">Anon666 <span class="date">31/10/2025 - 00:10</span></div>
       <div class="postContent">Oui, v1se b13n l'3nceph@le et port3 d3s gants</div>
     </div>
     <div class="post msg" id="post4">
-      <div class="author">DarkWolf <span class="date">29/10/2025 - 00:15</span></div>
+      <div class="author">DarkWolf <span class="date">31/10/2025 - 00:15</span></div>
       <div class="postContent">N'oubliez pas de rester discret et de ne laisser aucune trace.</div>
     </div>
     <div class="post msg" id="post5">
-      <div class="author">EchoX <span class="date">29/10/2025 - 00:20</span></div>
+      <div class="author">EchoX <span class="date">31/10/2025 - 00:20</span></div>
       <div class="postContent">Tout est prêt, soyez prudente et amusez-vous.</div>
     </div>
     <div class="post msg" id="post6">
-      <div class="author">NightOwl <span class="date">29/10/2025 - 00:25</span></div>
+      <div class="author">NightOwl <span class="date">31/10/2025 - 00:25</span></div>
       <div class="postContent">Préparez un plan de secours si quelque chose tourne mal.</div>
     </div>
     <div class="post msg" id="post7">
-      <div class="author">Shadow53 <span class="date">29/10/2025 - 00:30</span></div>
+      <div class="author">Shadow53 <span class="date">31/10/2025 - 00:30</span></div>
       <div class="postContent">Et n'oubliez pas de vérifier vos alliés.</div>
     </div>
     <div class="post msg" id="post8">
-      <div class="author">Anon666 <span class="date">29/10/2025 - 00:35</span></div>
+      <div class="author">Anon666 <span class="date">31/10/2025 - 00:35</span></div>
       <div class="postContent">C0ntr0l3z l3s cam3r@s avant l'@ct1on</div>
     </div>
     <div class="post msg" id="post9">
-      <div class="author">DarkWolf <span class="date">29/10/2025 - 00:40</span></div>
+      <div class="author">DarkWolf <span class="date">31/10/2025 - 00:40</span></div>
       <div class="postContent">Tout est planifié, assurez-vous que personne ne s'approche.</div>
     </div>
     <div class="post msg" id="post10">
-      <div class="author">Blackswan <span class="date">31/10/2025 - 19:30</span></div>
-      <div class="postContent">Merci pour vos conseils. L'enterrement de vie de jeune fille a été un franc succès !</div>
-   </div>
+      <div class="author">blackrose12 <span class="date">31/10/2025 - 19:30</span></div>
+      <div class="postContent">Merci pour vos conseils. L'enterrement de vie de jeune fille a été un succès !</div>
+    </div>
+  </div>
+
+  <!-- Boîte notification -->
+  <div id="enveloppe3Message">
+    🎉 Bravo, vous pouvez ouvrir l'enveloppe 3 !
+  </div>
+
 <script>
 const SECRET = 'HAPPY';
 const posts = [];
@@ -170,15 +183,9 @@ function checkCode(){
   let input = slots.map(id=>document.getElementById(id).value).join('');
   if(input===SECRET){
     posts.forEach(id=>document.getElementById(id).style.display='block');
-    document.getElementById('enveloppe3Message').style.display='block'; // afficher le message
+    document.getElementById('enveloppe3Message').style.display='block';
   }
-<div id="enveloppe3Message" style="display:none; 
-     position: fixed; bottom: 20px; right: 20px; 
-     background: #39ff14; color: #000; 
-     padding: 15px 20px; border-radius: 10px; 
-     font-weight: bold; box-shadow: 0 0 10px #39ff14;">
-  🎉 Bravo, vous pouvez ouvrir l'enveloppe 3 !
-</div>
+}
 </script>
 </body>
 </html>
